@@ -226,17 +226,17 @@
 
          //Change display of validity of prev/next
          if (this.$pageNumNavTop.first().is(':visible')) {
-            this.$prev.addClass(pluginName + '-disabled');
+            this.$prev.addClass(this._name + '-disabled');
          }
          else {
-            this.$prev.removeClass(pluginName + '-disabled');
+            this.$prev.removeClass(this._name + '-disabled');
          }
 
          if (this.$pageNumNavTop.last().is(':visible')) {
-            this.$next.addClass(pluginName + '-disabled');
+            this.$next.addClass(this._name + '-disabled');
          }
          else {
-            this.$next.removeClass(pluginName + '-disabled');
+            this.$next.removeClass(this._name + '-disabled');
          }
       },
 
@@ -257,24 +257,24 @@
          });
 
          //Update selected page number
-         this.$pageNumNavTop.removeClass(pluginName + '-selected');
-         this.$pageNumNavTop.eq(pageNum - 1).addClass(pluginName + '-selected');
-         this.$pageNumNavBottom.removeClass(pluginName + '-selected');
-         this.$pageNumNavBottom.eq(pageNum - 1).addClass(pluginName + '-selected');
+         this.$pageNumNavTop.removeClass(this._name + '-selected');
+         this.$pageNumNavTop.eq(pageNum - 1).addClass(this._name + '-selected');
+         this.$pageNumNavBottom.removeClass(this._name + '-selected');
+         this.$pageNumNavBottom.eq(pageNum - 1).addClass(this._name + '-selected');
 
          //Update first/last selected
          if (pageNum == 1) {
-            this.$first.addClass(pluginName + '-disabled');
+            this.$first.addClass(this._name + '-disabled');
          }
          else {
-            this.$first.removeClass(pluginName + '-disabled');
+            this.$first.removeClass(this._name + '-disabled');
          }
 
          if (pageNum == this.pages.length - 1) {
-            this.$last.addClass(pluginName + '-disabled');
+            this.$last.addClass(this._name + '-disabled');
          }
          else {
-            this.$last.removeClass(pluginName + '-disabled');
+            this.$last.removeClass(this._name + '-disabled');
          }
 
          //Current page number should be made visible on page change
@@ -282,7 +282,7 @@
 
          //Trigger an event that allows for additional handling of
          //page change external to the plugin
-         this.$pages.trigger(pluginName + '.pageChange');
+         this.$pages.trigger(this._name + '.pageChange');
       },
 
       trigger_destroy: function () {
@@ -296,7 +296,7 @@
          this.$last.remove();
          this.$prev.remove();
          this.$next.remove();
-         $.removeData(this.$pages, pluginName)
+         $.removeData(this.$pages, this._name)
       }
    };
 
