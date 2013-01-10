@@ -1,0 +1,28 @@
+.paginator-container {
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+.paginator-container span {
+   display: inline-block;
+   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+}
+.paginator-container span:active {
+   box-shadow: inset -2px 5px 4px rgba(0, 0, 0, 0.15);
+}
+.paginator-first-page, .paginator-last-page, .paginator-prev-page, .paginator-next-page, .paginator-page-number {
+   padding: 2px;
+   margin: 2px;
+   margin-left: 4px;
+   margin-right: 5px;
+   min-width: 15px;
+   background-color: #EB113D;
+   color: white;
+   font-weight: bold;
+   cursor: pointer;
+   border: 1px solid black;
+   text-align: center;
+}
+.paginator-selected, .paginator-disabled {
+   color: #EB113D;
+   background-color: white;
+}
